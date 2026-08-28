@@ -1,0 +1,5 @@
+TARGET_SAMPLE_RATE = 16000
+
+MONO = True
+
+N_MFCC = 13

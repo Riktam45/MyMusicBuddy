@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+:root {
+    font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+
+    color: #111111;
+    background: #ffffff;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   ANALYSIS PAGE
+   Light theme overrides
+   ========================================================= */
+
+.mm-analysis .bg-slate-950 {
+    background-color: #fafafa !important;
+}
+
+.mm-analysis .bg-slate-900 {
+    background-color: #f5f5f5 !important;
+}
+
+.mm-analysis .bg-slate-900\/40 {
+    background-color: #fafafa !important;
+}
+
+.mm-analysis .border-slate-800,
+.mm-analysis .border-slate-700 {
+    border-color: #e5e5e5 !important;
+}
+
+.mm-analysis .text-white {
+    color: #111111 !important;
+}
+
+.mm-analysis .text-slate-300 {
+    color: #404040 !important;
+}
+
+.mm-analysis .text-slate-400 {
+    color: #525252 !important;
+}
+
+.mm-analysis .text-slate-500 {
+    color: #737373 !important;
+}
+
+.mm-analysis .text-violet-300,
+.mm-analysis .text-violet-400 {
+    color: #111111 !important;
+}
+
+.mm-analysis .bg-violet-600 {
+    background-color: #111111 !important;
+}
+
+.mm-analysis .bg-violet-600\/15,
+.mm-analysis .bg-violet-600\/10 {
+    background-color: #f0f0f0 !important;
+}
+
+.mm-analysis .hover\:bg-violet-600\/25:hover {
+    background-color: #e8e8e8 !important;
+}
+
+.mm-analysis .hover\:border-violet-500\/40:hover {
+    border-color: #111111 !important;
+}
+
+.mm-analysis .bg-red-500\/10 {
+    background-color: #fef2f2 !important;
+}
+
+.mm-analysis .border-red-500\/30,
+.mm-analysis .border-red-500\/40 {
+    border-color: #fecaca !important;
+}
+
+.mm-analysis .text-red-300 {
+    color: #b91c1c !important;
+}
+
+
+/* =========================================================
+   ANALYSIS BUTTONS
+   White text on dark buttons
+   ========================================================= */
+
+.mm-analysis button.bg-violet-600,
+.mm-analysis button.bg-black,
+.mm-analysis button[class*="bg-violet-600"] {
+    color: #ffffff !important;
+}
+
+.mm-analysis button.bg-violet-600 *,
+.mm-analysis button.bg-black *,
+.mm-analysis button[class*="bg-violet-600"] * {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   REALTIME PAGE
+   Light theme overrides
+   ========================================================= */
+
+.mm-realtime .bg-slate-950 {
+    background-color: #fafafa !important;
+}
+
+.mm-realtime .bg-slate-900 {
+    background-color: #f5f5f5 !important;
+}
+
+.mm-realtime .border-slate-800,
+.mm-realtime .border-slate-700 {
+    border-color: #e5e5e5 !important;
+}
+
+.mm-realtime .text-white {
+    color: #111111 !important;
+}
+
+.mm-realtime .text-slate-400,
+.mm-realtime .text-slate-500 {
+    color: #525252 !important;
+}
+
+.mm-realtime .text-violet-300,
+.mm-realtime .text-violet-400 {
+    color: #111111 !important;
+}
+
+.mm-realtime .bg-violet-600 {
+    background-color: #111111 !important;
+}
+
+.mm-realtime .border-red-500\/40,
+.mm-realtime .border-red-500\/30 {
+    border-color: #fecaca !important;
+}
+
+.mm-realtime .bg-red-500\/10 {
+    background-color: #fef2f2 !important;
+}
+
+.mm-realtime .text-red-300 {
+    color: #b91c1c !important;
+}
+
+
+/* =========================================================
+   FINAL ANALYSIS COMPONENT FIXES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. Scale Recommendations
+   Root note:
+   black background + white text
+   --------------------------------------------------------- */
+
+.mm-analysis .scale-root-note {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+}
+
+.mm-analysis .scale-root-note * {
+    color: #ffffff !important;
+}
+
+
+/* ---------------------------------------------------------
+   2. Interval Names
+   Darker gray for easy visibility
+   --------------------------------------------------------- */
+
+.mm-analysis .interval-name {
+    color: #555555 !important;
+}
+
+
+/* ---------------------------------------------------------
+   3. Arpeggio Root Circle
+   Black circle + white letter
+   --------------------------------------------------------- */
+
+.mm-analysis .arpeggio-root-circle {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+}
+
+.mm-analysis .arpeggio-root-circle * {
+    color: #ffffff !important;
+}
+
+
+/* ---------------------------------------------------------
+   4. Arpeggio Root Note
+   Black box + white letter
+   --------------------------------------------------------- */
+
+.mm-analysis .arpeggio-root-note {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+}
+
+.mm-analysis .arpeggio-root-note * {
+    color: #ffffff !important;
+}
+
+
+/* ---------------------------------------------------------
+   5. Selected Scale Notes
+   Dark-blue/non-selected notes → light text
+   --------------------------------------------------------- */
+
+.mm-analysis .bg-slate-800 {
+    color: #f8fafc !important;
+}
+
+.mm-analysis .bg-slate-800 * {
+    color: #f8fafc !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 640px) {
+    .mm-site .rounded-\[28px\] {
+        border-radius: 20px;
+    }
+}

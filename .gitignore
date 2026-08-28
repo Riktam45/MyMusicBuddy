@@ -1,0 +1,43 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python virtual environment
+venv/
+.venv/
+backend/venv/
+.venv-ml/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Node dependencies
+node_modules/
+
+# Frontend build
+dist/
+build/
+
+# Runtime audio / temporary files
+storage/realtime/
+*.webm
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+desktop.ini
+
+# Large datasets / audio files
+ml/evaluation/maps/downloads/
+ml/evaluation/maps/dataset/
+*.wav
+*.mp3
+
+# Generated analysis output
+backend/storage/
