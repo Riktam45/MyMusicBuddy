@@ -1,212 +1,480 @@
-# MyMusicBuddy 🎵
+# 🎵 MyMusicBuddy
 
-MyMusicBuddy is an AI-powered music analysis application designed to help musicians understand and explore music through automatic note detection, chord analysis, scales, arpeggios, intervals, fretboard visualization, and real-time audio analysis.
-
-The project combines a React/Vite frontend with a Python/FastAPI backend and machine-learning-assisted music analysis.
+> An AI-powered music analysis platform that helps musicians understand notes, chords, scales, intervals, arpeggios, chord progressions, and musical structure from audio.
 
 ---
 
-## ✨ Features
+# 👨‍💻 Authors
 
-### 🎧 Real-Time Music Detection
-- Detect musical notes from microphone input
-- Detect current pitch and octave
-- Detect multiple simultaneous notes
-- Detect chords from incoming audio
-- Display confidence scores
-- Real-time event processing
+- **Riktam Das**
+- **MyMusicBuddy Development Team**
 
-### 🎼 Music Analysis
-- Note detection
-- Chord detection
-- Chord progression suggestions
-- Scale recommendations
-- Arpeggio suggestions
-- Interval analysis
-- Key/scale analysis
-- BPM and beat-related analysis
+GitHub: https://github.com/Riktam45
 
-### 🎸 Guitar Fretboard
-- Visualize detected notes
-- Display relevant fretboard positions
-- Explore scales and musical relationships on the guitar
+Project Repository: https://github.com/Riktam45/MyMusicBuddy
 
-### 🤖 Machine Learning
-MyMusicBuddy integrates **Spotify Basic Pitch** for automatic music transcription and pitch detection.
+---
 
-Basic Pitch is a lightweight neural-network-based Automatic Music Transcription (AMT) system developed by Spotify's Audio Intelligence Lab.
+# 📌 About MyMusicBuddy
 
-It can analyze audio and estimate:
+**MyMusicBuddy** is a full-stack AI-assisted music analysis application designed for musicians, music learners, guitar players, and music enthusiasts.
+
+The application combines:
+
+- 🎵 Real-time note detection
+- 🎸 Chord detection
+- 🎼 Scale recommendations
+- 🎹 Chord progression suggestions
+- 🎶 Arpeggio suggestions
+- 📐 Interval analysis
+- 🎸 Guitar fretboard visualization
+- 🎧 Full-song audio analysis
+- ⚡ Real-time microphone analysis
+- 🤖 Machine-learning-assisted pitch analysis
+- 🔐 User authentication
+- 📊 Music analysis results
+
+The project uses a hybrid approach combining **Digital Signal Processing (DSP), music theory algorithms, and machine learning**.
+
+---
+
+# ✨ Features
+
+## 🎤 Real-Time Music Detection
+
+MyMusicBuddy can listen to audio through the user's microphone and analyze the currently playing musical event.
+
+The real-time system can detect:
+
 - Musical notes
-- Note onset and offset
-- Pitch
-- Multiple simultaneous notes
-- Pitch bends
+- Note + octave
+- Chords
+- Detected notes
+- Confidence score
+- Musical events
 
-Basic Pitch is designed to work with polyphonic audio and is instrument-agnostic, although it performs best when the recording primarily contains one instrument.
+Example result:
+
+A#2
+
+Confidence: 44.4%
+
+The real-time system continuously analyzes short audio windows and updates the detected musical information while the user is playing.
+
+When the user stops listening, the application freezes the final result and generates musical suggestions.
 
 ---
 
-## 🤖 Machine Learning Model
+## 🎼 Chord Detection
 
-### Spotify Basic Pitch
+The application analyzes detected notes and determines possible chords.
 
-- **Model:** Basic Pitch
-- **Developer:** Spotify Audio Intelligence Lab
-- **Purpose:** Automatic Music Transcription (AMT)
-- **Primary task:** Audio → Musical Note / MIDI transcription
+Chord analysis includes:
 
-#### Official Links
-- **Repository:** [https://github.com/spotify/basic-pitch](https://github.com/spotify/basic-pitch)
-- **Model / Package:** [https://huggingface.co/spotify/basic-pitch](https://huggingface.co/spotify/basic-pitch)
-- **PyPI:** [https://pypi.org/project/basic-pitch/](https://pypi.org/project/basic-pitch/)
-- **Research Paper:** [https://arxiv.org/abs/2203.09893](https://arxiv.org/abs/2203.09893)
+- Major chords
+- Minor chords
+- Extended chords
+- Chord candidates
+- Chord formatting
+- Chord interval analysis
+- Chord smoothing
+- Chord segmentation
 
-### What Basic Pitch Does
+The system attempts to provide musically meaningful chord interpretations rather than relying only on raw pitch detection.
 
-Basic Pitch takes an audio recording as input and estimates musical note events.
+---
 
-**Conceptually:**
+## 🎹 Chord Progression Suggestions
+
+After analyzing a musical event, MyMusicBuddy can generate suggested chord progressions.
+
+Example:
+
+C → G → Am → F
+
+Chord progression suggestions can help musicians:
+
+- Compose songs
+- Experiment with harmony
+- Find compatible chords
+- Understand harmonic relationships
+- Develop new musical ideas
+
+---
+
+## 🎶 Arpeggio Analysis
+
+The project includes an arpeggio analysis and generation system.
+
+It can provide:
+
+- Arpeggio candidates
+- Arpeggio suggestions
+- Notes contained in an arpeggio
+- Arpeggio descriptions
+- Chord-to-arpeggio relationships
+
+---
+
+## 🎵 Scale Recommendations
+
+Based on detected musical information, the system can recommend related scales.
+
+The scale engine can work with:
+
+- Detected notes
+- Chord information
+- Intervals
+- Musical context
+
+This is useful for:
+
+- Improvisation
+- Solo development
+- Music theory learning
+- Understanding which scales may fit a musical idea
+
+---
+
+## 📐 Interval Analysis
+
+The application analyzes the interval relationships between detected notes.
+
+It includes:
+
+- Interval detection
+- Interval schemas
+- Interval analysis
+- Interval recommendations
+- Musical interval relationships
+
+---
+
+## 🎸 Guitar Fretboard
+
+MyMusicBuddy includes an interactive guitar fretboard system.
+
+The fretboard can be used to visualize:
+
+- Notes
+- Chords
+- Scales
+- Musical positions
+
+This helps guitar players connect detected musical information with practical fingerboard positions.
+
+---
+
+# 🤖 Machine Learning
+
+MyMusicBuddy uses machine learning as part of its music-analysis pipeline.
+
+The ML system is integrated with the backend through adapters and services.
+
+The project contains the following ML structure:
+
+ml/
+├── basic_pitch/
+│   ├── inference.py
+│   └── schema.py
+│
+├── hybrid/
+│   ├── engine.py
+│   └── schema.py
+│
+├── evaluation/
+│   ├── ground_truth.py
+│   ├── metrics.py
+│   ├── note_comparison.py
+│   ├── prediction.py
+│   └── maps_evaluate.py
+│
+├── schema.py
+└── service.py
+
+The backend also contains ML integration components:
+
+backend/app/ai/
+├── ml_arpeggio_adapter.py
+├── ml_chord_adapter.py
+├── ml_context.py
+├── ml_interval_adapter.py
+├── ml_note_schema.py
+└── ml_scale_adapter.py
+
+These components allow the machine-learning layer to work together with the project's music-analysis engines.
+
+---
+
+# 🧠 Basic Pitch Model
+
+The project uses the **Spotify Basic Pitch** system for automatic music transcription and pitch estimation.
+
+Basic Pitch is an automatic music transcription model developed by Spotify.
+
+It can process musical audio and produce note information that can then be processed by MyMusicBuddy's music-analysis pipeline.
+
+## Official Basic Pitch Resources
+
+GitHub:
+
+https://github.com/spotify/basic-pitch
+
+PyPI:
+
+https://pypi.org/project/basic-pitch/
+
+Official documentation:
+
+https://basicpitch.spotify.com/
+
+---
+
+# 📥 ML Model / Resource Download
+
+Large ML models, datasets, downloaded archives, generated audio files, and evaluation resources are intentionally **not stored inside this GitHub repository**.
+
+This keeps the Git repository lightweight and avoids committing very large binary files.
+
+For Basic Pitch, use the official Spotify project:
+
+https://github.com/spotify/basic-pitch
+
+Official Basic Pitch documentation:
+
+https://basicpitch.spotify.com/
+
+Follow the official installation and documentation instructions to obtain the required model dependencies.
+
+> ⚠️ Do not commit large model files, datasets, downloaded archives, or generated audio files directly into the Git repository.
+
+---
+
+# 🔬 ML Evaluation
+
+The project contains an evaluation pipeline for testing music transcription performance.
+
+Evaluation resources include:
+
+- Ground-truth data
+- Prediction data
+- Note comparison
+- Evaluation metrics
+- MAPS dataset integration
+- MIDI predictions
+- Audio evaluation
+
+The evaluation system is located under:
+
+ml/evaluation/
+
+Large datasets and downloaded archives are intentionally excluded from the GitHub repository.
+
+---
+
+# 🏗️ Project Architecture
+
+MyMusicBuddy follows a full-stack architecture.
+
+                    ┌─────────────────────────┐
+                    │        Frontend         │
+                    │    React + TypeScript   │
+                    │         + Vite          │
+                    └────────────┬────────────┘
+                                 │
+                                 │ HTTP / API
+                                 ▼
+                    ┌─────────────────────────┐
+                    │         Backend         │
+                    │          FastAPI        │
+                    │                         │
+                    │ Authentication          │
+                    │ Music Analysis          │
+                    │ Realtime Analysis       │
+                    │ Fretboard               │
+                    │ Playlists               │
+                    └────────────┬────────────┘
+                                 │
+              ┌──────────────────┼──────────────────┐
+              │                  │                  │
+              ▼                  ▼                  ▼
+       ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+       │ DSP / Music │    │ ML Pipeline │    │  Database   │
+       │   Engines   │    │ Basic Pitch │    │    Layer    │
+       └─────────────┘    └─────────────┘    └─────────────┘
+
+---
+
+# 🖥️ Frontend
+
+The frontend is built using:
+
+- React
+- TypeScript
+- Vite
+- CSS
+- Tailwind CSS utility classes
+
+Main frontend location:
+
+frontend1/
+
+Important components include:
+
+frontend1/src/
+├── components/
+│   ├── ArpeggioList.tsx
+│   ├── ChordTimeline.tsx
+│   ├── GuitarFretboard.tsx
+│   ├── IntervalList.tsx
+│   ├── RealtimePanel.tsx
+│   └── ScaleRecommendations.tsx
+│
+├── pages/
+│   ├── LandingPage.tsx
+│   ├── LoginPage.tsx
+│   ├── MainApp.tsx
+│   └── SignupPage.tsx
+│
+├── api/
+│   ├── analysis.ts
+│   ├── auth.ts
+│   ├── authState.ts
+│   ├── fretboard.ts
+│   └── music.ts
+│
+└── realtime/
+    └── microphone.ts
+
+---
+
+# ⚙️ Backend
+
+The backend is built using **FastAPI** and Python.
+
+Main backend location:
+
+backend/
+
+Major backend modules include:
+
+backend/app/
+├── admin/
+├── ai/
+├── analysis/
+├── api/
+├── auth/
+├── common/
+├── core/
+├── fretboard/
+├── music/
+├── playlists/
+├── realtime/
+└── users/
+
+---
+
+# 🔐 Authentication
+
+MyMusicBuddy includes user authentication.
+
+Authentication functionality includes:
+
+- User registration
+- Login
+- Authentication state
+- Protected routes
+- User-related API endpoints
+- Authorization and security utilities
+
+Frontend protected pages are handled using:
+
+frontend1/src/ProtectedRoute.tsx
+
+Backend authentication logic is located under:
+
+backend/app/auth/
+
+---
+
+# 🎧 Real-Time Audio Pipeline
+
+The real-time analysis flow is approximately:
+
+Microphone
+    ↓
+Audio Capture
+    ↓
+Audio Window
+    ↓
+Backend API
+    ↓
+Pitch / Note Analysis
+    ↓
+Chord / Music Analysis
+    ↓
+Realtime Result
+    ↓
+Frontend Display
+
+When the user stops listening:
+
+Stop Listening
+      ↓
+Finish Current Analysis
+      ↓
+Backend Final Snapshot
+      ↓
+Suggestions Generated
+      ↓
+Chord / Scale / Arpeggio / Progression Suggestions
+
+---
+
+# 🎵 Music Analysis Pipeline
+
+The full analysis pipeline can process audio through several stages:
 
 Audio
-   ↓
-Audio preprocessing
-   ↓
-Basic Pitch neural network
-   ↓
-Pitch / note detection
-   ↓
-Note events
-   ↓
-MyMusicBuddy music-analysis pipeline
-   ↓
-Notes / Chords / Scales / Arpeggios / Intervals
-
-The model can work with common audio formats such as:
-- WAV
-- MP3
-- OGG
-- FLAC
-- M4A
-
-Audio is internally processed at a 22050 Hz sample rate.
-
----
-
-## 📥 Installing / Downloading the ML Model
-
-You normally do **not** need to manually download a large model archive.
-
-Install Basic Pitch through PyPI:
-
-`pip install basic-pitch`
-
-- **Official package:** [https://pypi.org/project/basic-pitch/](https://pypi.org/project/basic-pitch/)
-- **Official source repository:** [https://github.com/spotify/basic-pitch](https://github.com/spotify/basic-pitch)
-
-The Basic Pitch package contains the supported model runtime and model files.
-Depending on the operating system and installed runtime, Basic Pitch can use different model formats including:
-- TensorFlow
-- CoreML
-- TensorFlow Lite
-- ONNX
-
-For Windows environments, the project documentation supports ONNX as a model runtime.
-
-### 👨‍🔬 Basic Pitch Authors
-
-The Basic Pitch research paper is:
-*"A Lightweight Instrument-Agnostic Model for Polyphonic Note Transcription and Multipitch Estimation"*
-
-**Authors:**
-- Rachel M. Bittner
-- Juan José Bosch
-- David Rubinstein
-- Gabriel Meseguer-Brocal
-- Sebastian Ewert
-
-**Published at:**
-IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2022
-
-#### Citation
-
-@inproceedings{2022_BittnerBRME_LightweightNoteTranscription_ICASSP,
-  author = {
-    Bittner, Rachel M. and
-    Bosch, Juan Jos\'e and
-    Rubinstein, David and
-    Meseguer-Brocal, Gabriel and
-    Ewert, Sebastian
-  },
-  title = {
-    A Lightweight Instrument-Agnostic Model for
-    Polyphonic Note Transcription and Multipitch Estimation
-  },
-  booktitle = {
-    Proceedings of the IEEE International Conference on
-    Acoustics, Speech and Signal Processing (ICASSP)
-  },
-  address = {Singapore},
-  year = {2022}
-}
+  ↓
+Audio Processing
+  ↓
+Feature Extraction
+  ↓
+Pitch Detection
+  ↓
+Note Detection
+  ↓
+Segmentation
+  ↓
+Chord Detection
+  ↓
+Key / Scale Analysis
+  ↓
+Intervals
+  ↓
+Arpeggios
+  ↓
+Musical Suggestions
 
 ---
 
-## 🧠 MyMusicBuddy ML Pipeline
-
-MyMusicBuddy does not rely exclusively on the ML model.
-The project uses a combination of machine-learning and music-signal-processing techniques.
-
-A simplified pipeline is:
-
-                 Audio Input
-                     │
-                     ▼
-              Audio Processing
-                     │
-                     ▼
-             ┌───────────────┐
-             │ Basic Pitch   │
-             │ ML Model      │
-             └───────────────┘
-                     │
-                     ▼
-               Note Events
-                     │
-          ┌──────────┼──────────┐
-          ▼          ▼          ▼
-       Pitch       Notes      Timing
-          │          │          │
-          └──────────┼──────────┘
-                     ▼
-              Music Analysis
-                     │
-       ┌─────────────┼─────────────┐
-       ▼             ▼             ▼
-     Chords        Scales       Intervals
-       │             │             │
-       ▼             ▼             ▼
-   Progressions   Arpeggios    Fretboard
-                     │
-                     ▼
-                User Interface
-
-The ML transcription stage is integrated into the larger MyMusicBuddy analysis pipeline rather than being the entire application.
-
----
-
-## 🗂️ Project Structure
+# 📂 Repository Structure
 
 MyMusicBuddy/
 │
 ├── ai-engine/
+│   └── README.md
 │
 ├── backend/
 │   ├── app/
+│   │   ├── admin/
 │   │   ├── ai/
 │   │   ├── analysis/
 │   │   ├── api/
 │   │   ├── auth/
+│   │   ├── common/
+│   │   ├── core/
 │   │   ├── fretboard/
 │   │   ├── music/
 │   │   ├── playlists/
@@ -214,179 +482,303 @@ MyMusicBuddy/
 │   │   └── users/
 │   │
 │   ├── requirements.txt
-│   └── ...
+│   └── tests
 │
 ├── frontend1/
 │   ├── src/
+│   │   ├── api/
 │   │   ├── components/
 │   │   ├── pages/
-│   │   ├── realtime/
-│   │   └── api/
+│   │   └── realtime/
+│   │
 │   ├── package.json
-│   └── ...
+│   └── vite.config.ts
 │
 ├── ml/
 │   ├── basic_pitch/
-│   ├── hybrid/
 │   ├── evaluation/
+│   ├── hybrid/
+│   ├── schema.py
 │   └── service.py
 │
-├── README.md
+├── .gitignore
 ├── LICENSE
-└── .gitignore
+├── README.md
+└── ml_test.py
 
 ---
 
-## ⚙️ Installation
+# 🚀 Installation
 
-### Backend Setup
+## 1. Clone the Repository
 
-1. Create a virtual environment:
-   `python -m venv .venv`
+git clone https://github.com/Riktam45/MyMusicBuddy.git
 
-2. Activate it on Windows:
-   `.venv\Scripts\Activate.ps1`
-
-3. Install dependencies:
-   `pip install -r backend/requirements.txt`
-
-4. Install Basic Pitch if it is not already included:
-   `pip install basic-pitch`
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
-   `cd frontend1`
-
-2. Install dependencies:
-   `npm install`
-
-3. Start the development server:
-   `npm run dev`
+cd MyMusicBuddy
 
 ---
 
-## 🎤 Real-Time Mode
+# 🐍 Backend Setup
 
-MyMusicBuddy provides a real-time microphone analysis mode.
+Create a Python virtual environment:
 
-**Workflow:**
+python -m venv .venv
 
-Microphone
-    ↓
-Audio Capture
-    ↓
-Audio Windows
-    ↓
-Backend Analysis API
-    ↓
-Pitch / Note Detection
-    ↓
-Chord Analysis
-    ↓
-Realtime Result
-    ↓
-Frontend
+Activate it on Windows:
 
-The interface continuously updates the currently detected musical event.
-When the user stops listening, the backend finalizes the current analysis and generates additional musical suggestions.
+.venv\Scripts\activate
+
+Install backend dependencies:
+
+pip install -r backend/requirements.txt
 
 ---
 
-## 🔐 Environment Variables
+# 🔑 Environment Variables
 
-Do not commit private credentials, API keys, database passwords, or secret keys.
+Create your environment configuration based on:
 
-Create your local environment file from the provided example:
+backend/.env.example
 
-`cp backend/.env.example backend/.env`
+Do not commit your real `.env` file.
 
-On Windows PowerShell:
+The `.env.example` file contains example configuration and is safe to include in the repository.
 
-`Copy-Item backend/.env.example backend/.env`
-
-Fill in the required values locally. The `.env` file should remain untracked.
+Add your own local environment variables according to the requirements of the application.
 
 ---
 
-## 📦 Large Datasets
+# ▶️ Run the Backend
 
-Large datasets and generated audio files are intentionally not included in the Git repository.
-For example, the MAPS evaluation dataset and large WAV files may require separate downloading/storage.
-This keeps the Git repository lightweight and makes cloning the source code significantly faster.
+From the project root:
 
-If you need the evaluation dataset, download it separately and place it in the expected directory described by the ML evaluation scripts.
+uvicorn backend.app.main:app --reload
 
----
-
-## 📊 Evaluation
-
-The project contains ML evaluation utilities under:
-
-`ml/evaluation/`
-
-These include tools for:
-- Ground-truth comparison
-- Note comparison
-- Prediction generation
-- Evaluation metrics
-- MAPS dataset evaluation
-
-*Note: Large evaluation datasets are excluded from the Git repository.*
+Depending on your local Python package configuration, the backend may also be started from inside the `backend` directory.
 
 ---
 
-## ⚖️ Third-Party ML Attribution
+# ⚛️ Frontend Setup
 
-MyMusicBuddy uses Spotify Basic Pitch as a third-party machine-learning component.
-Basic Pitch is developed by Spotify Audio Intelligence Lab and released under the Apache License 2.0.
+Go to the frontend:
 
-Copyright 2022 Spotify AB
+cd frontend1
 
-For the complete license terms, see the official Basic Pitch License: [https://github.com/spotify/basic-pitch/blob/main/LICENSE](https://github.com/spotify/basic-pitch/blob/main/LICENSE)
-Please refer to the official Basic Pitch repository and research paper for full attribution and licensing details.
+Install dependencies:
 
----
+npm install
 
-## 📚 References
+Start the development server:
 
-- **Basic Pitch Repository:** [https://github.com/spotify/basic-pitch](https://github.com/spotify/basic-pitch)
-- **Basic Pitch Model:** [https://huggingface.co/spotify/basic-pitch](https://huggingface.co/spotify/basic-pitch)
-- **PyPI Package:** [https://pypi.org/project/basic-pitch/](https://pypi.org/project/basic-pitch/)
-- **Research Paper:** [https://arxiv.org/abs/2203.09893](https://arxiv.org/abs/2203.09893)
-- **Spotify Engineering Post:** [https://engineering.atspotify.com/2022/6/meet-basic-pitch](https://engineering.atspotify.com/2022/6/meet-basic-pitch)
+npm run dev
+
+The Vite development server will provide the local frontend address.
 
 ---
 
-## 👨‍💻 Author
+# 🧪 Testing
 
-- **Project:** MyMusicBuddy
-- **Developer:** Riktam45
-- **GitHub:** [https://github.com/Riktam45/MyMusicBuddy](https://github.com/Riktam45/MyMusicBuddy)
+The repository contains several test and evaluation scripts.
+
+Examples include:
+
+backend/test_basic_pitch.py
+
+backend/test_chord_engine.py
+
+backend/test_full_song.py
+
+backend/test_full_song_real.py
+
+backend/test_hybrid.py
+
+backend/test_ml_vs_dsp.py
+
+ml_test.py
+
+Run individual tests using Python.
+
+Example:
+
+python backend/test_basic_pitch.py
+
+or:
+
+python ml_test.py
 
 ---
 
-## 📄 License
+# 📊 DSP + ML Hybrid Approach
 
-This project is distributed under the license included in this repository.
-Third-party software and models may have their own licenses and attribution requirements.
-Please review the respective third-party licenses before redistributing or modifying those components.
+One of the main ideas behind MyMusicBuddy is combining traditional music-processing techniques with machine learning.
+
+Instead of depending exclusively on an ML model, the application contains dedicated music-analysis engines for:
+
+- Pitch
+- Chords
+- Intervals
+- Scales
+- Arpeggios
+- Key detection
+- Beat tracking
+- Segmentation
+- Fretboard analysis
+
+The ML system can provide pitch and note information while the music-analysis layer interprets that information using music theory and DSP-based processing.
+
+This hybrid architecture allows the application to combine machine-learning capabilities with deterministic music-analysis algorithms.
 
 ---
 
-### One correction I'd make to your wording
+# 🛡️ Git & Large Files
 
-Don't call Basic Pitch **"your ML model"** in the README.
+Large datasets, downloaded archives, generated audio, and model resources are intentionally excluded from GitHub.
 
-Call it:
+For example, large MAPS dataset archives should not be committed directly into the repository.
 
-> **"Third-party ML model used by MyMusicBuddy: Spotify Basic Pitch."**
+Instead:
 
-That's important because **you integrated the model into MyMusicBuddy; you didn't author Basic Pitch itself**. Spotify's official documentation confirms the model was developed by its Audio Intelligence Lab, and lists the research authors.
+1. Clone the repository.
+2. Install the required dependencies.
+3. Download the required external ML/model resources.
+4. Place them in the appropriate local directory.
+5. Run the application.
 
-Also, the **Hugging Face model page** is a better "ML model download" destination than inventing a direct model-file URL. The official Basic Pitch package can also install the model/runtime through `pip`.
+This keeps the GitHub repository manageable while still allowing the project to be reproduced.
 
-- [Basic Pitch — GitHub](https://github.com/spotify/basic-pitch)
-- [Basic Pitch — Hugging Face Model](https://huggingface.co/spotify/basic-pitch)
-- [Basic Pitch — PyPI](https://pypi.org/project/basic-pitch/)
-- [Basic Pitch Research Paper](https://arxiv.org/abs/2203.09893)
+---
+
+# ⚠️ Important
+
+Some ML and evaluation resources are intentionally **not included in this repository** because of their large size and/or external dataset distribution requirements.
+
+The GitHub repository contains the source code required to integrate and process those resources.
+
+Users should obtain third-party datasets and models from their official sources and follow their respective licenses and terms.
+
+---
+
+# 📦 Large Dataset Handling
+
+The project previously used large evaluation resources including MAPS-related files.
+
+These files can include:
+
+- WAV audio
+- MIDI files
+- ZIP archives
+- Ground-truth data
+- Prediction data
+- Evaluation datasets
+
+These resources should remain outside the Git repository when they are too large for normal GitHub storage.
+
+The source code is maintained in GitHub, while large external resources can be downloaded separately when needed.
+
+---
+
+# 📜 Third-Party Resources
+
+This project may use or integrate with third-party technologies and datasets.
+
+## Spotify Basic Pitch
+
+GitHub:
+
+https://github.com/spotify/basic-pitch
+
+Documentation:
+
+https://basicpitch.spotify.com/
+
+PyPI:
+
+https://pypi.org/project/basic-pitch/
+
+## MAPS Dataset
+
+The MAPS database is used in music-information-retrieval research and evaluation.
+
+Users should obtain the dataset from its official distribution source and comply with the applicable dataset license and terms.
+
+---
+
+# 🎯 Project Goals
+
+The main goals of MyMusicBuddy are:
+
+- Make music analysis easier
+- Help beginners understand music theory
+- Assist musicians during practice
+- Provide real-time musical feedback
+- Connect audio analysis with practical guitar knowledge
+- Combine AI with traditional music-processing techniques
+- Provide useful musical suggestions instead of only raw detection results
+- Make complex music-analysis concepts easier to understand
+
+---
+
+# 🔮 Future Improvements
+
+Possible future improvements include:
+
+- 🎤 Improved real-time transcription
+- 🎼 More accurate chord recognition
+- 🎹 Better polyphonic transcription
+- 🎸 More guitar-specific analysis
+- 🎵 Melody tracking
+- 🥁 Improved beat and rhythm analysis
+- 📈 Visualization of musical events over time
+- 🤖 Improved ML models
+- ☁️ Cloud-based ML inference
+- 📱 Mobile application
+- 🎧 Better full-song analysis
+- 🎼 More advanced harmonic analysis
+
+---
+
+# 👨‍💻 Author
+
+## Riktam Das
+
+GitHub:
+
+https://github.com/Riktam45
+
+MyMusicBuddy Repository:
+
+https://github.com/Riktam45/MyMusicBuddy
+
+---
+
+# 📄 License
+
+This project is distributed under the license included in the repository.
+
+See:
+
+LICENSE
+
+for the complete license terms.
+
+---
+
+# ⭐ Support
+
+If you find MyMusicBuddy useful:
+
+⭐ Star the repository
+
+🐛 Report bugs
+
+💡 Suggest improvements
+
+🔧 Contribute improvements
+
+---
+
+# 🎵 MyMusicBuddy
+
+**Listen. Analyze. Understand. Create.**
+
+An AI-assisted music-analysis platform built to help musicians turn audio into musical knowledge.
