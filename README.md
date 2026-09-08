@@ -1,10 +1,10 @@
-# 🎵 MyMusicBuddy
+#  MyMusicBuddy
 
 > An AI-powered music analysis platform that helps musicians understand notes, chords, scales, intervals, arpeggios, chord progressions, and musical structure from audio.
 
 ---
 
-# 👨‍💻 Authors
+#  Authors
 
 - **Riktam Das**
 - **MyMusicBuddy Development Team**
@@ -15,32 +15,32 @@ Project Repository: https://github.com/Riktam45/MyMusicBuddy
 
 ---
 
-# 📌 About MyMusicBuddy
+#  About MyMusicBuddy
 
 **MyMusicBuddy** is a full-stack AI-assisted music analysis application designed for musicians, music learners, guitar players, and music enthusiasts.
 
 The application combines:
 
-- 🎵 Real-time note detection
-- 🎸 Chord detection
-- 🎼 Scale recommendations
-- 🎹 Chord progression suggestions
-- 🎶 Arpeggio suggestions
-- 📐 Interval analysis
-- 🎸 Guitar fretboard visualization
-- 🎧 Full-song audio analysis
-- ⚡ Real-time microphone analysis
-- 🤖 Machine-learning-assisted pitch analysis
-- 🔐 User authentication
-- 📊 Music analysis results
+-  Real-time note detection
+-  Chord detection
+-  Scale recommendations
+-  Chord progression suggestions
+-  Arpeggio suggestions
+-  Interval analysis
+-  Guitar fretboard visualization
+-  Full-song audio analysis
+-  Real-time microphone analysis
+-  Machine-learning-assisted pitch analysis
+-  User authentication
+-  Music analysis results
 
 The project uses a hybrid approach combining **Digital Signal Processing (DSP), music theory algorithms, and machine learning**.
 
 ---
 
-# ✨ Features
+#  Features
 
-## 🎤 Real-Time Music Detection
+##  Real-Time Music Detection
 
 MyMusicBuddy can listen to audio through the user's microphone and analyze the currently playing musical event.
 
@@ -65,7 +65,7 @@ When the user stops listening, the application freezes the final result and gene
 
 ---
 
-## 🎼 Chord Detection
+##  Chord Detection
 
 The application analyzes detected notes and determines possible chords.
 
@@ -84,7 +84,7 @@ The system attempts to provide musically meaningful chord interpretations rather
 
 ---
 
-## 🎹 Chord Progression Suggestions
+##  Chord Progression Suggestions
 
 After analyzing a musical event, MyMusicBuddy can generate suggested chord progressions.
 
@@ -102,7 +102,7 @@ Chord progression suggestions can help musicians:
 
 ---
 
-## 🎶 Arpeggio Analysis
+##  Arpeggio Analysis
 
 The project includes an arpeggio analysis and generation system.
 
@@ -116,7 +116,7 @@ It can provide:
 
 ---
 
-## 🎵 Scale Recommendations
+##  Scale Recommendations
 
 Based on detected musical information, the system can recommend related scales.
 
@@ -136,7 +136,7 @@ This is useful for:
 
 ---
 
-## 📐 Interval Analysis
+##  Interval Analysis
 
 The application analyzes the interval relationships between detected notes.
 
@@ -150,7 +150,7 @@ It includes:
 
 ---
 
-## 🎸 Guitar Fretboard
+##  Guitar Fretboard
 
 MyMusicBuddy includes an interactive guitar fretboard system.
 
@@ -165,7 +165,7 @@ This helps guitar players connect detected musical information with practical fi
 
 ---
 
-# 🤖 Machine Learning
+#  Machine Learning
 
 MyMusicBuddy uses machine learning as part of its music-analysis pipeline.
 
@@ -206,7 +206,7 @@ These components allow the machine-learning layer to work together with the proj
 
 ---
 
-# 🧠 Basic Pitch Model
+#  Basic Pitch Model
 
 The project uses the **Spotify Basic Pitch** system for automatic music transcription and pitch estimation.
 
@@ -230,7 +230,7 @@ https://basicpitch.spotify.com/
 
 ---
 
-# 📥 ML Model / Resource Download
+#  ML Model / Resource Download
 
 Large ML models, datasets, downloaded archives, generated audio files, and evaluation resources are intentionally **not stored inside this GitHub repository**.
 
@@ -246,11 +246,11 @@ https://basicpitch.spotify.com/
 
 Follow the official installation and documentation instructions to obtain the required model dependencies.
 
-> ⚠️ Do not commit large model files, datasets, downloaded archives, or generated audio files directly into the Git repository.
+>  Do not commit large model files, datasets, downloaded archives, or generated audio files directly into the Git repository.
 
 ---
 
-# 🔬 ML Evaluation
+#  ML Evaluation
 
 The project contains an evaluation pipeline for testing music transcription performance.
 
@@ -272,7 +272,7 @@ Large datasets and downloaded archives are intentionally excluded from the GitHu
 
 ---
 
-# 🏗️ Project Architecture
+#  Project Architecture
 
 MyMusicBuddy follows a full-stack architecture.
 
@@ -305,7 +305,7 @@ MyMusicBuddy follows a full-stack architecture.
 
 ---
 
-# 🖥️ Frontend
+#  Frontend
 
 The frontend is built using:
 
@@ -348,7 +348,7 @@ frontend1/src/
 
 ---
 
-# ⚙️ Backend
+#  Backend
 
 The backend is built using **FastAPI** and Python.
 
@@ -374,7 +374,7 @@ backend/app/
 
 ---
 
-# 🔐 Authentication
+#  Authentication
 
 MyMusicBuddy includes user authentication.
 
@@ -397,7 +397,7 @@ backend/app/auth/
 
 ---
 
-# 🎧 Real-Time Audio Pipeline
+#  Real-Time Audio Pipeline
 
 The real-time analysis flow is approximately:
 
@@ -431,7 +431,7 @@ Chord / Scale / Arpeggio / Progression Suggestions
 
 ---
 
-# 🎵 Music Analysis Pipeline
+#  Music Analysis Pipeline
 
 The full analysis pipeline can process audio through several stages:
 
@@ -459,7 +459,7 @@ Musical Suggestions
 
 ---
 
-# 📂 Repository Structure
+# Repository Structure
 
 MyMusicBuddy/
 │
@@ -508,7 +508,7 @@ MyMusicBuddy/
 
 ---
 
-# 🚀 Installation
+#  Installation
 
 ## 1. Clone the Repository
 
@@ -518,7 +518,7 @@ cd MyMusicBuddy
 
 ---
 
-# 🐍 Backend Setup
+#  Backend Setup
 
 Create a Python virtual environment:
 
@@ -534,7 +534,7 @@ pip install -r backend/requirements.txt
 
 ---
 
-# 🔑 Environment Variables
+#  Environment Variables
 
 Create your environment configuration based on:
 
@@ -548,7 +548,7 @@ Add your own local environment variables according to the requirements of the ap
 
 ---
 
-# ▶️ Run the Backend
+#  Run the Backend
 
 From the project root:
 
@@ -558,7 +558,7 @@ Depending on your local Python package configuration, the backend may also be st
 
 ---
 
-# ⚛️ Frontend Setup
+#  Frontend Setup
 
 Go to the frontend:
 
@@ -576,7 +576,7 @@ The Vite development server will provide the local frontend address.
 
 ---
 
-# 🧪 Testing
+#  Testing
 
 The repository contains several test and evaluation scripts.
 
@@ -608,7 +608,7 @@ python ml_test.py
 
 ---
 
-# 📊 DSP + ML Hybrid Approach
+#  DSP + ML Hybrid Approach
 
 One of the main ideas behind MyMusicBuddy is combining traditional music-processing techniques with machine learning.
 
@@ -630,7 +630,7 @@ This hybrid architecture allows the application to combine machine-learning capa
 
 ---
 
-# 🛡️ Git & Large Files
+#  Git & Large Files
 
 Large datasets, downloaded archives, generated audio, and model resources are intentionally excluded from GitHub.
 
@@ -648,7 +648,7 @@ This keeps the GitHub repository manageable while still allowing the project to 
 
 ---
 
-# ⚠️ Important
+#  Important
 
 Some ML and evaluation resources are intentionally **not included in this repository** because of their large size and/or external dataset distribution requirements.
 
@@ -658,7 +658,7 @@ Users should obtain third-party datasets and models from their official sources 
 
 ---
 
-# 📦 Large Dataset Handling
+#  Large Dataset Handling
 
 The project previously used large evaluation resources including MAPS-related files.
 
@@ -677,7 +677,7 @@ The source code is maintained in GitHub, while large external resources can be d
 
 ---
 
-# 📜 Third-Party Resources
+#  Third-Party Resources
 
 This project may use or integrate with third-party technologies and datasets.
 
@@ -703,7 +703,7 @@ Users should obtain the dataset from its official distribution source and comply
 
 ---
 
-# 🎯 Project Goals
+#  Project Goals
 
 The main goals of MyMusicBuddy are:
 
@@ -718,28 +718,28 @@ The main goals of MyMusicBuddy are:
 
 ---
 
-# 🔮 Future Improvements
+#  Future Improvements
 
 Possible future improvements include:
 
-- 🎤 Improved real-time transcription
-- 🎼 More accurate chord recognition
-- 🎹 Better polyphonic transcription
-- 🎸 More guitar-specific analysis
-- 🎵 Melody tracking
-- 🥁 Improved beat and rhythm analysis
-- 📈 Visualization of musical events over time
-- 🤖 Improved ML models
-- ☁️ Cloud-based ML inference
-- 📱 Mobile application
-- 🎧 Better full-song analysis
-- 🎼 More advanced harmonic analysis
+-  Improved real-time transcription
+-  More accurate chord recognition
+-  Better polyphonic transcription
+-  More guitar-specific analysis
+-  Melody tracking
+-  Improved beat and rhythm analysis
+-  Visualization of musical events over time
+-  Improved ML models
+-  Cloud-based ML inference
+-  Mobile application
+-  Better full-song analysis
+-  More advanced harmonic analysis
 
 ---
 
-# 👨‍💻 Author
+#  Author
 
-## Riktam Das
+## Riktam Sarkar
 
 GitHub:
 
@@ -750,35 +750,5 @@ MyMusicBuddy Repository:
 https://github.com/Riktam45/MyMusicBuddy
 
 ---
-
-# 📄 License
-
-This project is distributed under the license included in the repository.
-
-See:
-
-LICENSE
-
-for the complete license terms.
-
----
-
-# ⭐ Support
-
-If you find MyMusicBuddy useful:
-
-⭐ Star the repository
-
-🐛 Report bugs
-
-💡 Suggest improvements
-
-🔧 Contribute improvements
-
----
-
-# 🎵 MyMusicBuddy
-
-**Listen. Analyze. Understand. Create.**
 
 An AI-assisted music-analysis platform built to help musicians turn audio into musical knowledge.
