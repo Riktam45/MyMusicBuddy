@@ -6,7 +6,7 @@
 
 #  Authors
 
-- **Riktam Das**
+- **Riktam Sarkar**
 - **MyMusicBuddy Development Team**
 
 GitHub: https://github.com/Riktam45
